@@ -1,12 +1,24 @@
 # Muscle fiber analysis
-This macro allows the user to perform two coupled tasks:
+Requirements:
 
-1) Identify muscle fibers based on staining and measure their cross sectional area.
-2) Identify the myosin subtypes present in the muscle fiber based on visually determined lower threshold levels
+ImageJ Requirements:  This macro was coded to run on FIJI v 2.0.0-rc-65/1.52i/Java 1.8_066 (64-bit). 
+Image requirements: This macro requires LSM files containing a dystrophin channel.  If no myosin channels are present, only the  will be measured. 
 
-Requirements:  This macro utilized plugins that are loaded with FIJI v 2.0.0-rc-65/1.52i/Java 1.8_066 (64-bit).  Additionally, this macro requires LSM files that has atleast a dystrophin channel.  If no myosin channels are present, only the area will be measured.  
+Macro Summary:
 
-After starting the macro, select a folder that contains the LSM files that you want to analyze.  When each LSM file is loaded, a folder is created with the same name that will contain the results.  When the file is loaded, the identity of each channel has to be set. Analysis of muscle fiber area will be peformed by a semiautomated analysis of the dystrophine channel using the following method:
+This macro allows the user to perform two tasks, the second being dependent on the completion of the first:
+  1) Identify muscle fibers based on dystrophin staining, exclude fibers based on measurement thresholding, directly delete erroneously detected fiber, and measure the cross sectional areas of all detected fibers.
+  2) Measure the intensity of staining for each other channel (myosin), determine if a fiber is positive or negative for each myosin based on a minimum intensity threshold, and count the number of fibers positive for each myosin subtype and combination of myosin subtypes.
+
+Starting analysis:
+
+First, all of the LSM files that you want to analyze need to be placed in a single folder. To analyze images, run the macro and select     the folder containing the LSM files when prompted.  Each LSM file will be loaded sequentially and after the analysis is completeed the     results will be saved in a folder with the same name as the LSM file.
+
+Setting Channels:
+
+When the file is loaded, the identity of each channel has to be set. The macro will detect how many channels are present and an identity has to be assigned for each channel: dystrophine, myosin 1, myosin 2, myosin 3, or not analzed.  The dystrophin channel will be used to identify individual fibers and measure cross-sectional area.  The myosin channels will be used identify the myosin subtypes presence in each fiber.
+
+Fiber area identification:
 
 1) A local thresholding algorithm will be applied to identify the dystrophine stain.
 2) A neurite tracing algorithm identifies putative signle dimensional borders of the fibers based on the dystrophin thresholding.  
