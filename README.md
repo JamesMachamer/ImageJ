@@ -37,11 +37,10 @@ Fiber area thresholding
 
 Direct elimination of fibers
 
-Next, select individual fiber outlines and press delete to eliminate them from analysis.  Press "OK" when satisfied with the remaining fibers.
+Individual fiber outlines may be selected and deleted.  Press "OK" when satisfied with the remaining fibers.
 
-Determining fiber myosin subtype identity
+Determining fiber myosin subtype identity (for each myosin channel)
 
-For each myosin channel the following occurs:
 1) The average signal intensity within each muscle fiber outline is measured.
 1) Muscle fibers are identified by outline in the myosin channel have intensities above the preset minimum threshold value.
 2) The user may adjust the threshold values by sliding the bar or entering in values directly
