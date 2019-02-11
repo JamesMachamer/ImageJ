@@ -37,7 +37,10 @@ Fiber area thresholding
 
 Direct elimination of fibers
 
-Individual fiber outlines may be selected and deleted.  Press "OK" when satisfied with the remaining fibers.
+1. Individual fibers may be selected by left clicking.
+2. Press "Delete" to eliminate the fiber.
+3. Make sure that you delete the fiber binary signal and not just the ROI that surrounds it.  
+4. Press "OK" when satisfied with the remaining fibers.
 
 Determining fiber myosin subtype identity (for each myosin channel)
 
