@@ -6,17 +6,17 @@ Image requirements: This macro requires LSM files containing a dystrophin channe
 
 Macro Summary:
 
-This macro allows the user to perform two tasks, the second being dependent on the completion of the first:
+  This macro allows the user to perform two tasks, the second being dependent on the completion of the first:
   1) Identify muscle fibers based on dystrophin staining, exclude fibers based on measurement thresholding, directly delete erroneously detected fiber, and measure the cross sectional areas of all detected fibers.
   2) Measure the intensity of staining for each other channel (myosin), determine if a fiber is positive or negative for each myosin based on a minimum intensity threshold, and count the number of fibers positive for each myosin subtype and combination of myosin subtypes.
 
 Starting analysis:
 
-First, all of the LSM files that you want to analyze need to be placed in a single folder. To analyze images, run the macro and select     the folder containing the LSM files when prompted.  Each LSM file will be loaded sequentially and after the analysis is completeed the     results will be saved in a folder with the same name as the LSM file.
+  First, all of the LSM files that you want to analyze need to be placed in a single folder. To analyze images, run the macro and select the folder containing the LSM files when prompted.  Each LSM file will be loaded sequentially and after the analysis is completeed the results will be saved in a folder with the same name as the LSM file.
 
 Setting Channels:
 
-When the file is loaded, the identity of each channel has to be set. The macro will detect how many channels are present and an identity has to be assigned for each channel: dystrophine, myosin 1, myosin 2, myosin 3, or not analzed.  The dystrophin channel will be used to identify individual fibers and measure cross-sectional area.  The myosin channels will be used identify the myosin subtypes presence in each fiber.
+  When the file is loaded, the identity of each channel has to be set. The macro will detect how many channels are present and an identity has to be assigned for each channel: dystrophine, myosin 1, myosin 2, myosin 3, or not analzed.  The dystrophin channel will be used to identify individual fibers and measure cross-sectional area.  The myosin channels will be used identify the myosin subtypes presence in each fiber.
 
 Fiber area identification:
 
