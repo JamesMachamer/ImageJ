@@ -18,14 +18,24 @@ Setting Channels
 
   When the file is loaded, the identity of each channel has to be set. The macro will detect how many channels are present and an identity has to be assigned for each channel: dystrophine, myosin 1, myosin 2, myosin 3, or not analzed.  The dystrophin channel will be used to identify individual fibers and measure cross-sectional area.  The myosin channels will be used identify the myosin subtypes presence in each fiber.
 
-Fiber area identification
+Fiber identification
 
-The dystrophin channel will be used to identify muscle fibers through the following steps:
+First, putative muscle fibers are identified through the application of the following steps:
 
 1) A local thresholding algorithm will be applied to create a binary image of dystrophine stain.
 2) A neurite tracing algorithm used the binary image to identify single pixel width skeletons of the binary dystrophin thresholding.  
 3) Neurite end branches are pruned to eliminate false or incomplete dystrophin staining.
-4) The area between the dystrophin borders are selected as muscle fibers.
-5) The user then inputs the upper and lower thresholds for muscle fiber size (initialized at >X um and <Y um) and the minimum roundness (initialized at X)
-6) 
+4) Areas compeletely surrounded by the skeletonized dystrophin staining are selected as muscle fibers.
+
+Fiber area thresholding 
+
+1) Muscle fibers are identified by outlinne in dystrophin image that have areas above the preset minimum threshold area (X um), below the preset maximum threshold area (Y um) and above the preset minimum roundness (X)
+2) The user may adjust the threshold values by slding the bar or entering in values directly
+3) Updating the anlysis will generate a new set of fiber outlinnes reflecting the new threshold values.
+4) Value adjustments and updating can be peformed until the user is satisfied with the identified fibers
+5) The user may proceed to the next step by selecting "finished" from the pull down menu and pressing ok.
+
+Direct elimination of fibers
+
+
 
