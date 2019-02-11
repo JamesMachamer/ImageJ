@@ -37,5 +37,9 @@ Fiber area thresholding
 
 Direct elimination of fibers
 
+Next, select individual fiber outlines and press delete to eliminate them from analysis.  Press "OK" when satisfied with the remaininng fibers.
 
+Determining fiber mysosin subtype identity
+
+The average signal intensity for each myosin subtype channel within the area of each identified fibers is measured and values below the selected threshold are identified as "negative" and those above the selected threshold level are identified as "positive" 
 
