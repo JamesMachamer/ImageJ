@@ -1,16 +1,15 @@
 # Muscle fiber analysis
 
+  This macro will allow you to measure muscle fiber size with dystrophin staining and identify fiber types with staining of myosin heavy chain (MHC) isoforms.  This is accomplished in two parts, the second being dependent on the completion of the first:
+  1) Identify muscle fibers based on dystrophin staining, exclude fibers based on measurement thresholding, directly delete erroneously detected fiber, and measure the cross-sectional areas of all detected fibers.
+  2) Measure the intensity of staining in each other MHC channel, determine if a fiber is positive or negative for each MHC isoform based on a minimum intensity threshold, and count the number of fibers positive for each MHC isoform and combination of MHC isoform.
+
 Requirements
 
 ImageJ Requirements:  This macro was coded to run on FIJI v 2.0.0-rc-65/1.52i/Java 1.8_066 (64-bit).
 
-Image requirements: This macro requires LSM files containing a dystrophin channel.  If no myosin channels are present, only the area will be measured. 
+Image requirements: This macro requires LSM files containing a dystrophin channel (or any other stain outlining muscle fibers) and MHC channels.  If no myosin channels are present, only the area will be measured. 
 
-Macro Summary
-
-  This macro performs two tasks, the second being dependent on the completion of the first:
-  1) Identify muscle fibers based on dystrophin staining, exclude fibers based on measurement thresholding, directly delete erroneously detected fiber, and measure the cross-sectional areas of all detected fibers.
-  2) Measure the intensity of staining for each other channel (myosin), determine if a fiber is positive or negative for each myosin based on a minimum intensity threshold, and count the number of fibers positive for each myosin subtype and combination of myosin subtypes.
 
 Starting analysis
 
@@ -18,7 +17,7 @@ Starting analysis
 
 Setting Channels
 
-  For each channel in the image file, the staining identitiy has to be set as: “dystrophin”, “myosin 1”, “myosin 2”, “myosin 3”, or ”not analyzed” using the radio buttons..  The dystrophin channel will be used to identify individual fibers and measure cross-sectional area.  The myosin channels will be used identify the myosin subtypes presence in each fiber.
+  For each channel in the image file, the staining identitiy has to be set as: “dystrophin”, “myosin 1”, “myosin 2”, “myosin 3”, or ”not analyzed” using the radio buttons..  The dystrophin channel will be used to identify individual fibers and measure cross-sectional area.  The myosin channels will be used identify the MHC isoforms present in each fiber.
 
 Muscle fiber identification
 
@@ -29,7 +28,7 @@ Muscle fiber identification
 
 Fiber area thresholding 
 
-1) Muscle fibers are identified by outline in dystrophin image that have areas above the preset minimum threshold area (X um), below the preset maximum threshold area (Y um) and above the preset minimum roundness (X)
+1) Muscle fibers are identified by outline in dystrophin image that have areas above the preset minimum threshold area, below the preset maximum threshold area and above the preset minimum roundnes.
 2) The user may adjust the threshold values by sliding the bar or entering in values directly
 3) Updating the analysis will generate a new set of fiber outlines reflecting the new threshold values.
 4) Value adjustments and updating can be performed until the user is satisfied with the identified fibers
@@ -42,10 +41,10 @@ Direct elimination of fibers
 3. Make sure that you delete the fiber binary signal and not just the ROI that surrounds it.  
 4. Press "OK" when satisfied with the remaining fibers.
 
-Determining fiber myosin subtype identity (for each myosin channel)
+Determining fiber MHC identity- processed for each channel identified as a myosin channel
 
 1) The average signal intensity within each muscle fiber outline is measured.
-1) Muscle fibers are identified by outline in the myosin channel have intensities above the preset minimum threshold value.
+1) Muscle fibers are identified by outline have intensities above the preset minimum threshold value.
 2) The user may adjust the threshold values by sliding the bar or entering in values directly
 3) Updating the analysis will generate a new set of fiber outlines reflecting the new threshold values.
 4) Value adjustments and updating can be performed until the user is satisfied with the identified fibers
